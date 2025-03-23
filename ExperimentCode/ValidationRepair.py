@@ -48,9 +48,9 @@ class ChatGptTester:
             self.sub_save_dir = "CodeFuse"
         elif "glm-zero-preview" in model_path:
             self.sub_save_dir = os.path.basename(Json_file_Path).replace(".json", "")
-            openai.api_base = "https://open.bigmodel.cn/api/paas/v4/"
+            openai.api_base = ""
             # TODO SET API_KEY
-            openai.api_key = "73cd6a4de99e4cc0ef87fc576701f55f.ofWpaz982S6RaXJb"
+            openai.api_key = ""
             
         self.C_GeneratedTest_Path = os.path.join(current_dir, 'Contain_intention', self.sub_save_dir, 'GeneratedTest_2')
         self.C_LogINFO_Path = os.path.join(current_dir, 'Contain_intention', self.sub_save_dir, 'LogINFO')
@@ -742,8 +742,8 @@ class Unit:
 
 
 if __name__ == "__main__":
-    # projects_name = ['sachin-handiekar_jInstagram.json', 'tabulapdf_tabula-java.json', 'Zappos_zappos-json.json']
-    projects_name = ['Zappos_zappos-json.json']
+    projects_name = ['sachin-handiekar_jInstagram.json', 'tabulapdf_tabula-java.json', 'Zappos_zappos-json.json']
+
     for project_name in projects_name:
         print("project_name: "+project_name)
         Json_file_Path = os.path.join(AgentTesterDir, "RepoData", project_name)
