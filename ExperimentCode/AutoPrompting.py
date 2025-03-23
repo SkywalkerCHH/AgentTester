@@ -45,7 +45,6 @@ class ChatGptTester_inital:
 
             # TODO set api_key
             # openai.api_base = "https://openkey.cloud/v1"
-            # openai.api_base = "https://open.bigmodel.cn/api/paas/v4/"
             # openai.api_key = ""
 
         self.original_java_PATH = os.path.join(current_dir, self.Intention_TAG, sub_save_dir, 'original_java')
@@ -106,13 +105,6 @@ class ChatGptTester_inital:
             ScaffoldingCode = Test_method["scaffoldingCode"]
             TestCodeShell = Test_method['TestCodeShell']
 
-            try:
-                # excute_path = os.path.join(testedRepo_PATH, project_name)
-                # os.chdir(excute_path)
-                # os.system('git add .')  # 使用os.system执行命令行操作
-                # os.system('git commit -m "Initial commit for safety"')
-                # os.chdir(current_dir)
-
                 self.boolean(TestDir)
                 with open(TestScaffoldPath, 'w', encoding='utf-8') as f:
                     f.write(ScaffoldingCode)
@@ -148,10 +140,6 @@ class ChatGptTester_inital:
             except Exception as e:
                 traceback.print_exc()
             finally:
-                # 重置Git仓库状态，reset repo status
-                # os.chdir(excute_path)   # 切换工作目录到excute_path
-                # os.system('git restore .')  # 将工作目录中的所有文件恢复到最后一次提交的状态
-                # os.system('git clean -fd')  # 删除未跟踪的文件和目录
                 test_path = os.path.join(testedRepo_PATH, project_name, "src", "test")
                 self.boolean(test_path)
                 print("Project reset.")
