@@ -42,10 +42,8 @@ class PromptDistillation:
         elif "glm-zero-preview" in model_path:
             sub_save_dir = os.path.basename(Json_file_Path).replace(".json", "")
             # TODO set api_key
-            openai.api_base = "https://open.bigmodel.cn/api/paas/v4/"
-            openai.api_key = "73cd6a4de99e4cc0ef87fc576701f55f.ofWpaz982S6RaXJb"
-            # openai.api_base = "http://localhost:11434/v1"
-            # openai.api_key = "ollama"
+            openai.api_base = ""
+            openai.api_key = ""
 
         self.original_java_PATH = os.path.join(current_dir, self.Intention_TAG, sub_save_dir, 'original_java')
         self.LogINFO_PATH = os.path.join(current_dir, self.Intention_TAG, sub_save_dir, 'LogINFO')
@@ -467,8 +465,7 @@ if __name__ == "__main__":
     else:
         Intention = "No_intention"
 
-    # projects_name = ['sachin-handiekar_jInstagram', 'tabulapdf_tabula-java', 'Zappos_zappos-json']
-    projects_name = ['sachin-handiekar_jInstagram']
+    projects_name = ['sachin-handiekar_jInstagram', 'tabulapdf_tabula-java', 'Zappos_zappos-json']
 
     for project_name in projects_name:
         print("project_name: "+project_name)
